@@ -1,333 +1,349 @@
 /* RESET */
 * {
-    margin: 0;
-    padding: 0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /* HEADER */
 header {
-    height: 100px;
-    background: #BA7E71;
-    padding: 0 50px;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  height: 100px;
+  background: #BA7E71;
+  padding: 0 50px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
-    font-weight: 200;
-    display: inline-block;
-    text-transform: uppercase;
-    font-weight: 200;
-    color: transparent;
-    background: url(./images/logoprincipal.png) no-repeat center center;
-    background-size: contain;
-    height: 100px;
-    width: 100px;
+  font-weight: 200;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 200;
+  color: transparent;
+  background: url(./images/logoprincipal.png) no-repeat center center;
+  background-size: contain;
+  height: 100px;
+  width: 100px;
 }
 
 .menu a {
-    color: #fff;
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 0 10px;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0 10px;
 }
 
 .mostrar-menu,
 .esconder-menu {
-    font-size: 30px;
-    cursor: pointer;
-    transition: 0.4s;
+  font-size: 30px;
+  cursor: pointer;
+  transition: 0.4s;
 }
 
 .mostrar-menu {
-    order: 1;
+  order: 1;
 }
 
 .menu a:hover,
 .mostrar-menu:hover,
 .esconder-menu:hover {
-    color: #6cc091;
+  color: #6cc091;
 }
 
 #check {
-    display: none;
+  display: none;
 }
 
 /* BANNER */
-#banner {
-    padding: 0 50px;
-    background-image: url(./images/imabanner.jpg);
-    height: 45vh;
-    background-size: cover;
-    background-position: center;
-    position: relative;
+#banner { 
+  padding: 0 50px;
+  background-image: url(./images/imabanner.jpg);
+  height: 45vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;  /* movimiento de fondo banner */
+  animation: moveBackground 10s infinite linear; /* Ajusta la duración según tus necesidades */
 }
 
 #banner::before {
-    content: '';
-    background: rgba(77, 77, 92, 0.6);
-    position: absolute;
-    width: 100%;
-    height: 45vh;
-    left: 0;
+  content: '';
+  background: rgba(77, 77, 92, 0.6);
+  position: absolute;
+  width: 100%;
+  height: 45vh;
+  left: 0;
+}
+@keyframes moveBackground {  /* movimiento de fondo banner */
+  0% {
+    background-position: center;
+  }
+  50% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: center;
+  }
 }
 
 .contenido-banner {
-    position: relative;
-    color: #fff;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  position: relative;
+  color: #fff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .contenido-banner h3 {
-    font-size: 30px;
-    font-weight: 400;
-    padding: 10px 0px;
+  font-size: 30px;
+  font-weight: 400;
+  padding: 10px 0px;
 }
 
 .contenido-banner h3 span {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 .boton-empezar {
-    text-decoration: none;
-    color: #fff;
-    border: 1px solid #6cc091;
-    padding: 20px;
-    align-self: baseline;
-    transition: all 0.4s;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid #6cc091;
+  padding: 20px;
+  align-self: baseline;
+  transition: all 0.4s;
 }
 
 .boton-empezar:hover {
-    background: #6CC09070;
+  background: #6CC09070;
 }
 
 /* PERSONAJES */
 #personajes {
-    padding: 50px 50px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
+  padding: 50px 50px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 #personajes img {
-    width: 100%;
-    height: 300px;
-    max-width: 300px;
-    transition: transform 0.3s ease-in-out;
+  width: 100%;
+  height: 300px;
+  max-width: 300px;
+  transition: transform 0.3s ease-in-out;
 }
 
 #personajes div:hover img {  /* zoom de la imagen */
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 #personajes div {
-    padding: 30px 30px;
+  padding: 30px 30px;
 }
 
 #personajes div h4 {
-    color: #4d4d5c;
-    font-size: 20px;
-    margin: 15px 0px;
+  color: #4d4d5c;
+  font-size: 20px;
+  margin: 15px 0px;
 }
 
 #personajes div p {
-    color: #4d4d5c87;
-    font-size: 18px;
+  color: #4d4d5c87;
+  font-size: 18px;
 }
 
 .boton-saber-mas {
-    display: inline-block;
-    text-decoration: none;
-    color: #555555;
-    padding: 10px 30px;
-    border: 3px solid #4d4d5c;
-    border-radius: 30px;
-    margin-top: 15px;
-    transition: all 0.4s;
+  display: inline-block;
+  text-decoration: none;
+  color: #555555;
+  padding: 10px 30px;
+  border: 3px solid #4d4d5c;
+  border-radius: 30px;
+  margin-top: 15px;
+  transition: all 0.4s;
 }
 
 .boton-saber-mas:hover {
-    background: #4d4d5c;
+  background: #4d4d5c;
 }
 
 /* ICONOS */
 #iconos {
-    padding: 0px 50px;
-    background: #BA7E71;
+  padding: 0px 50px;
+  background: #BA7E71;
 }
 
 .contenido-iconos {
-    padding: 50px 50px 0px 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center; /* Alinear verticalmente los elementos */
-    text-align: center;
+  padding: 50px 50px 0px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Alinear verticalmente los elementos */
+  text-align: center;
 }
 
 .contenido-iconos div {
-    flex: 1;
-    margin: 20px 0px;
-    border-right: 2px solid rgba(255, 255, 255, 0.2);
-    box-sizing: border-box; /* Evitar que el borde afecte el tamaño total */
+  flex: 1;
+  margin: 20px 0px;
+  border-right: 2px solid rgba(255, 255, 255, 0.2);
+  box-sizing: border-box; /* Evitar que el borde afecte el tamaño total */
 }
 
 #icono-mobile {
-    border: none;
+  border: none;
 }
 
 .contenido-iconos div i {
-    color: #E9D6D2;
+  color: #E9D6D2;
 }
 
 .contenido-iconos {
-    color: #fff;
-    font-size: 20px;
-    font-weight: 100;
-    margin: 10px 0;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 100;
+  margin: 10px 0;
 }
 
 .boton-iconos {
-    text-align: center;
-    padding-bottom: 50px;
+  text-align: center;
+  padding-bottom: 50px;
 }
 
 /* FORMULARIO */
 #contacto {
-    background: #525555;
-    /* Fondo de  formulario */
-    padding: 50px 0px;
-    color: #fff;
+  background: #525555;
+  /* Fondo de  formulario */
+  padding: 50px 0px;
+  color: #fff;
 }
 
 #contacto h4 {
-    text-align: center;
-    font-size: 25px;
-    margin-bottom: 20px;
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 20px;
 }
 
 #contacto form {
-    max-width: 80%;
-    margin: 0 auto;
+  max-width: 80%;
+  margin: 0 auto;
 }
 
 .datos-form {
-    display: flex;
+  display: flex;
 }
 
 .datos-form div {
-    padding: 10px;
-    flex: 1;
+  padding: 10px;
+  flex: 1;
 }
 
 form label {
-    display: block;
-    margin-bottom: 10px;
+  display: block;
+  margin-bottom: 10px;
 }
 
 form input,
 form textarea {
-    background: #fff;
-    border-radius: 10px;
-    border: 2px solid #8dcca9;
-    padding: 10px 5px;
-    outline: 0;
-    color: #030303;
-    /*color de texto dentro de campo del formulario*/
-    width: 100%;
-    /*ancho del formulario*/
+  background: #fff;
+  border-radius: 10px;
+  border: 2px solid #8dcca9;
+  padding: 10px 5px;
+  outline: 0;
+  color: #030303;
+  /*color de texto dentro de campo del formulario*/
+  width: 100%;
+  /*ancho del formulario*/
 }
 
 form input:focus,
 form textarea:focus {
-    border-color: #4bae77;
-    box-shadow: 0 0 0 1px #4bae77;
+  border-color: #4bae77;
+  box-shadow: 0 0 0 1px #4bae77;
 }
 
 form input::placeholder,
 form textarea::placeholder {
-    color: #fff;
+  color: #fff;
 }
 
 .mensaje {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
 }
 
 .boton-formulario .boton-saber-mas {
-    display: block;
-    border: 1px solid #fff;
-    /*efecto contorno blanco boton*/
-    color: #fff;
-    text-align: center;
-    transition: 0.4s;
+  display: block;
+  border: 1px solid #fff;
+  /*efecto contorno blanco boton*/
+  color: #fff;
+  text-align: center;
+  transition: 0.4s;
 }
 
 .boton-formulario .boton-saber-mas:hover {
-    background: #4FA776AD;
+  background: #4FA776AD;
 }
 
 /* RESPONSIVE */
 @media (max-width: 760px) {
-    /* HEADER */
-    .mostrar-menu,
-    .esconder-menu {
-        display: block;
-    }
+  /* HEADER */
+  .mostrar-menu,
+  .esconder-menu {
+      display: block;
+  }
 
-    .menu {
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        background: #BA7E71;
-        right: -100%;
-        top: 0;
-        text-align: center;
-        padding: 100px 0px;
-        z-index: 100;
-        transition: 0.8s;
-    }
+  .menu {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: #BA7E71;
+      right: -100%;
+      top: 0;
+      text-align: center;
+      padding: 100px 0px;
+      z-index: 100;
+      transition: 0.8s;
+  }
 
-    .menu a {
-        display: block;
-        padding: 20px;
-    }
+  .menu a {
+      display: block;
+      padding: 20px;
+  }
 
-    .esconder-menu {
-        position: absolute;
-        top: 40px;
-        right: 40px;
-    }
+  .esconder-menu {
+      position: absolute;
+      top: 40px;
+      right: 40px;
+  }
 
-    #check:checked~.menu {
-        right: 0;
-    }
+  #check:checked~.menu {
+      right: 0;
+  }
 
-    /* PERSONAJES , SECCION RESPONSIVA */
-    #personajes {
-        flex-direction: column;
-    }
+  /* PERSONAJES , SECCION RESPONSIVA */
+  #personajes {
+      flex-direction: column;
+  }
 
-    /* Iconos */
-    .contenido-iconos {
-        flex-direction: column;
-    }
+  /* Iconos */
+  .contenido-iconos {
+      flex-direction: column;
+  }
 
-    .contenido-iconos div {
-        border: none;
-    }
+  .contenido-iconos div {
+      border: none;
+  }
 
-    /* FORMULARIO */
-    .datos-form {
-        flex-direction: column;
-    }
+  /* FORMULARIO */
+  .datos-form {
+      flex-direction: column;
+  }
 }
+
+
+
+
 
 
 
