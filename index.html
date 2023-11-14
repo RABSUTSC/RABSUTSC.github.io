@@ -9,6 +9,8 @@
     <script src="https://kit.fontawesome.com/81e7c35d94.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
+    <!-- Header con barra de navegación -->
     <header>
         <a class="logo">Logo</a>
         <input type="checkbox" id="check">
@@ -18,7 +20,7 @@
         <nav class="menu">
             <a href="#Home">Home</a>
             <a href="#Blog">Blog</a>
-            <a href="#Contactos">Contactos</a>
+            <a href="#Contactos">Contacts</a>
             <a href="#About">About</a>
             <a href="#Pricing">Pricing</a>
             <a href="#Terms">Terms</a>
@@ -29,81 +31,117 @@
         </nav>
     </header>
 
+    <!-- Sección de banner -->
     <section id="banner">
         <div class="contenido-banner">
             <h3><span>THE</span> <br>VILLAGE</h3>
-            <a href="#" class="boton-empezar">Empezar</a>
+            <a href="#" class="boton-empezar">Begin</a>
         </div>
     </section>
 
+    <!-- Sección de personajes -->
     <section id="personajes">
         <div>
             <img src="./images/JanyLogo.png" alt="">
             <h4>Jany</h4>
-            <p>Conexión Mágica</p>
-            <a href="#" class="boton-saber-mas">Saber más</a>
+            <p>Magic Connection</p>
+            <a href="#" class="boton-saber-mas" onclick="mostrarInformacion('jany')">Saber más</a>
+            <div id="informacion-jany" style="display: none;">
+                <!-- Contenido adicional que se mostrará -->
+                <p>Additional information about Jany...</p>
+            </div>
         </div>
-        <div>
+         <div>
             <img src="./images/LiderdealdeaLogo.png" alt="">
-            <h4>Lider de la aldea</h4>
-            <p>Sabiduría Ancestral</p>
-            <a href="#" class="boton-saber-mas">Saber más</a>
+            <h4>Village leader</h4>
+            <p>Ancestral Wisdom</p>
+            <a href="#" class="boton-saber-mas" onclick="mostrarInformacion('lider')">Saber más</a>
+            <div id="informacion-lider" style="display: none;">
+                <!-- Contenido adicional sobre el líder -->
+                <p>Additional information about the leader...</p>
+            </div>
         </div>
         <div>
             <img src="./images/MoustrodelbosqueLogo.png" alt="">
-            <h4>Mounstro del Bosque</h4>
-            <p>Legado Maldito</p>
-            <a href="#" class="boton-saber-mas">Saber más</a>
+            <h4>Forest Monster</h4>
+            <p>Cursed Legacy</p>
+            <a href="#" class="boton-saber-mas" onclick="mostrarInformacion('monstruo')">Saber más</a>
+            <div id="informacion-monstruo" style="display: none;">
+                <!-- Contenido adicional sobre el monstruo -->
+                <p>Additional information about the monster...</p>
+            </div>
         </div>
     </section>
+    <script>
+        function mostrarInformacion(personaje) {
+            var informacionDiv = document.getElementById('informacion-' + personaje);
+    
+            // Mostrar la información adicional
+            informacionDiv.style.display = 'block';
+    
+            // Ocultar la información después de 10 segundos
+            setTimeout(function () {
+                informacionDiv.style.display = 'none';
+            }, 10000); // 10000 milisegundos = 10 segundos
+        }
+    </script>
 
+    <!-- Sección de iconos -->
     <section id="iconos">
         <div class="contenido-iconos">
             <div>
                 <i class="fa-brands fa-space-awesome fa-3x"></i>
-                <h6>La Aventura</h6>
-                <p>¡Explora un mundo lleno de emociones y descubre la verdadera esencia de la aventura!</p>
+                <h6>The adventure</h6>
+                <p>Explore a world full of emotions and discover the true essence of adventure!</p>
             </div>
             <div>
                 <i class="fa-solid fa-eye fa-3x"></i>
-                <h6>Nos espera</h6>
-                <p>¡Afronta la incertidumbre con valentía y descubre lo que el destino tiene preparado para ti!</p>
+                <h6>He's waiting for us</h6>
+                <p>Face uncertainty with courage and discover what destiny has in store for you!</p>
             </div>
             <div>
                 <div class="icono-mobile"></div>
                 <i class="fa-solid fa-bomb fa-3x"></i>
-                <h6>Con miles de enemigos</h6>
-                <p>¡Enfréntate a desafíos, supera obstáculos y conquista a miles de enemigos en tu camino hacia la victoria!</p>
+                <h6>With thousands of enemies</h6>
+                <p>Face challenges, overcome obstacles and conquer thousands of enemies on your way to victory!</p>
             </div>
         </div>
         <div class="boton-iconos">
-            <a href="#" class="boton-saber-mas">Saber más</a>
+            <a href="#" class="boton-saber-mas">Know more</a>
         </div>
     </section>
+
+    <!-- Sección de contacto -->
     <section id="contacto">
         <h4>Contacto</h4>
         <form action="#">
             <div class="datos-form">
                 <div class="nombre">
                     <label for="nombre">Nombre</label>
-                    <input type="text" name="nombre" id="nombre"
-                    placeholder="Nombre">
+                    <input type="text" name="nombre" id="nombre" placeholder="Nombre">
                 </div>
                 <div class="email">
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email"
-                    placeholder="Email">
+                    <input type="email" name="email" id="email" placeholder="Email">
                 </div>
             </div>
             <div class="mensaje">
                 <label for="mensaje">Mensaje</label>
-                <textarea name="mensaje" id="mensaje" cols="30" 
-                rows="10" placeholder="Mensaje"></textarea>
+                <textarea name="mensaje" id="mensaje" cols="30" rows="10" placeholder="Mensaje"></textarea>
             </div>
             <div class="boton-formulario">
-                <a href="#" class="boton-saber-mas">Enviar Mensaje</a>
+                <a href="#" class="boton-saber-mas" onclick="mostrarAlerta()">Send Message</a>
             </div>
         </form>
     </section>
+
+    <!-- Script para mostrar alerta al enviar el formulario -->
+    <script>
+        function mostrarAlerta() {
+            alert("Mensaje enviado exitosamente");
+        }
+    </script>
+
 </body>
 </html>
+

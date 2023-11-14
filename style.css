@@ -63,6 +63,7 @@ header {
     height: 45vh;
     background-size: cover;
     background-position: center;
+    position: relative;
 }
 
 #banner::before {
@@ -118,6 +119,11 @@ header {
     width: 100%;
     height: 300px;
     max-width: 300px;
+    transition: transform 0.3s ease-in-out;
+}
+
+#personajes div:hover img {  /* zoom de la imagen */
+    transform: scale(1.2);
 }
 
 #personajes div {
@@ -149,6 +155,7 @@ header {
 .boton-saber-mas:hover {
     background: #4d4d5c;
 }
+
 /* ICONOS */
 #iconos {
     padding: 0px 50px;
@@ -177,6 +184,7 @@ header {
 .contenido-iconos div i {
     color: #E9D6D2;
 }
+
 .contenido-iconos {
     color: #fff;
     font-size: 20px;
@@ -184,78 +192,84 @@ header {
     margin: 10px 0;
 }
 
-.boton-iconos{
+.boton-iconos {
     text-align: center;
     padding-bottom: 50px;
 }
 
-/*FORMULARIO*/
-#contacto{
-    background: #525555; /*Fondo de  formulario*/
+/* FORMULARIO */
+#contacto {
+    background: #525555;
+    /* Fondo de  formulario */
     padding: 50px 0px;
     color: #fff;
 }
-#contacto h4{
+
+#contacto h4 {
     text-align: center;
     font-size: 25px;
     margin-bottom: 20px;
 }
 
-#contacto form{
+#contacto form {
     max-width: 80%;
     margin: 0 auto;
 }
 
-.datos-form{
+.datos-form {
     display: flex;
 }
 
-.datos-form div{
+.datos-form div {
     padding: 10px;
     flex: 1;
 }
 
-form label{
+form label {
     display: block;
     margin-bottom: 10px;
 }
 
 form input,
-form textarea{  /*Fondo de texto recuadro*/
+form textarea {
     background: #fff;
     border-radius: 10px;
     border: 2px solid #8dcca9;
     padding: 10px 5px;
     outline: 0;
-    color: #030303; /*color de texto dentro de campo del formulario*/
-    width: 100%; /*ancho del formulario*/
+    color: #030303;
+    /*color de texto dentro de campo del formulario*/
+    width: 100%;
+    /*ancho del formulario*/
 }
+
 form input:focus,
-form textarea:focus{  /*efecto contorno formulario al dar click*/
+form textarea:focus {
     border-color: #4bae77;
     box-shadow: 0 0 0 1px #4bae77;
 }
 
 form input::placeholder,
-form textarea::placeholder{
+form textarea::placeholder {
     color: #fff;
 }
 
-.mensaje{
+.mensaje {
     display: flex;
     flex-direction: column;
     padding: 10px;
 }
 
-.boton-formulario .boton-saber-mas{
+.boton-formulario .boton-saber-mas {
     display: block;
-    border: 1px solid #fff;  /*efecto contorno blanco boton*/
+    border: 1px solid #fff;
+    /*efecto contorno blanco boton*/
     color: #fff;
     text-align: center;
     transition: 0.4s;
 }
 
-.boton-formulario .boton-saber-mas:hover{
+.boton-formulario .boton-saber-mas:hover {
     background: #4FA776AD;
 }
 
@@ -299,23 +313,22 @@ form textarea::placeholder{
     #personajes {
         flex-direction: column;
     }
-    
+
     /* Iconos */
-    .contenido-iconos{
+    .contenido-iconos {
         flex-direction: column;
     }
-   
-    .contenido-iconos div{
+
+    .contenido-iconos div {
         border: none;
     }
 
     /* FORMULARIO */
-    .datos-form{
+    .datos-form {
         flex-direction: column;
-        
     }
-    
 }
+
 
 
 
