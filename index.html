@@ -39,19 +39,6 @@
             });
         });
     </script>
-    <script>
-        $(document).ready(function() {
-            // Manejar el clic en el enlace de Pricing
-            $('a[href="#"]').on('click', function(e) {
-                e.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
-
-                // Encontrar la sección con la clase "pricing-wrapper" y desplazarse hasta ella
-                $('html, body').animate({
-                    scrollTop: $('.pricing-wrapper').offset().top
-                }, 1000); // El valor 1000 representa la duración de la animación en milisegundos
-            });
-        });
-    </script>
 </head>
 <body>
 
@@ -143,7 +130,7 @@
             <img src="./images/JanyLogo.png" alt="">
             <h4>Jany</h4>
             <p>Magic Connection</p>
-            <a href="" class="boton-saber-mas" onclick="mostrarInformacion('jany')">Saber más</a>
+            <a href="" class="boton-saber-mas" onclick="mostrarInformacion('jany')">know more</a>
             <div id="informacion-jany" style="display: none;">
                 <!-- Contenido adicional que se mostrará -->
                 <p>Additional information about Jany...</p>
@@ -153,7 +140,7 @@
             <img src="./images/LiderdealdeaLogo.png" alt="">
             <h4>Village leader</h4>
             <p>Ancestral Wisdom</p>
-            <a href="" class="boton-saber-mas" onclick="mostrarInformacion('lider')">Saber más</a>
+            <a href="" class="boton-saber-mas" onclick="mostrarInformacion('lider')">know more</a>
             <div id="informacion-lider" style="display: none;">
                 <!-- Contenido adicional sobre el líder -->
                 <p>Additional information about the leader...</p>
@@ -163,7 +150,7 @@
             <img src="./images/MoustrodelbosqueLogo.png" alt="">
             <h4>Forest Monster</h4>
             <p>Cursed Legacy</p>
-            <a href="" class="boton-saber-mas" onclick="mostrarInformacion('monstruo')">Saber más</a>
+            <a href="" class="boton-saber-mas" onclick="mostrarInformacion('monstruo')">know more</a>
             <div id="informacion-monstruo" style="display: none;">
                 <!-- Contenido adicional sobre el monstruo -->
                 <p>Additional information about the monster...</p>
@@ -336,6 +323,58 @@
 <!-- partial -->
 </section>
 
+<!-- Modal de Términos -->
+<section id="termsSection">
+    <!-- Modal de Términos -->
+    <div id="termsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Terms and Conditions of the Game "The Village"</h2>
+            <p>
+                <strong>1. Acceptance of Terms</strong><br>
+                By accessing and using "The Village", you agree to comply with these terms and conditions. If you do not agree with any part of these terms, we recommend that you do not play.
+            </p>
+            <p>
+                <strong>2. Proper Use</strong><br>
+                "The Village" is a game designed for entertainment. Players are expected to respect the rules of the game, interact positively, and avoid any disruptive or abusive behavior.
+            </p>
+            <!-- Agrega párrafos similares para los demás puntos -->
+            <p>
+                <strong>3.Enjoy "The Village" and have an exciting gaming experience.</strong><br>
+                Remember to adapt this text according to the specific theme of your game and the legal requirements of your region.
+            </p>
+            <p>
+                <strong>4.User Content</strong><br>
+                By interacting with "The Village", you agree that any content you contribute (comments, images, etc.) 
+                may be visible to other players. Offensive, defamatory or illegal content is prohibited.
+            </p>
+            <p>
+                <strong>5.Privacy</strong><br>
+                Our privacy policy describes how we collect, store and use user information. By playing "The Village", you agree to our privacy policy.
+            </p>
+            <p>Enjoy "The Village" and have an exciting gaming experience.</p>
+        </div>
+    </div>
+</section>
+
+    <script>
+        // Función para abrir el modal
+        function openModal() {
+            $("#termsModal").fadeIn();
+
+            // Cerrar automáticamente después de 30 segundos
+            setTimeout(function() {
+                closeModal();
+            }, 30000); // 30000 milisegundos = 30 segundos
+        }
+
+        // Función para cerrar el modal
+        function closeModal() {
+            $("#termsModal").fadeOut();
+        }
+    </script>
+
+
     <!-- Script para mostrar alerta al enviar el formulario -->
     <script>
         function mostrarAlerta() {
@@ -390,7 +429,7 @@
                                     <a href="#Contactos">Contacts</a>
                                     <a href="#About">About</a>
                                     <a href="#Pricing">Pricing</a>
-                                    <a href="#Terms">Terms</a>
+                                    <a href="#termsSection" onclick="openModal()">Terms</a>
                                     <a href="#Legal">Legal</a>
                             </ul>
                         </div>
