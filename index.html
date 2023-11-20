@@ -7,6 +7,51 @@
     <title>VIDEOGAME</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/81e7c35d94.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://kit.fontawesome.com/81e7c35d94.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Manejar el clic en el enlace de Pricing
+            $('a[href="#"]').on('click', function(e) {
+                e.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
+
+                // Encontrar la sección con la clase "pricing-wrapper" y desplazarse hasta ella
+                $('html, body').animate({
+                    scrollTop: $('.pricing-wrapper').offset().top
+                }, 1000); // El valor 1000 representa la duración de la animación en milisegundos
+            });
+
+            // Mostrar/ocultar el botón "Volver arriba" cuando se hace scroll
+            var scrollToTopBtn = $("#scrollToTopBtn");
+
+            $(window).scroll(function() {
+                if ($(window).scrollTop() > 300) {
+                    scrollToTopBtn.fadeIn();
+                } else {
+                    scrollToTopBtn.fadeOut();
+                }
+            });
+
+            // Desplazar suavemente hacia arriba cuando se hace clic en el botón
+            scrollToTopBtn.on("click", function() {
+                $("html, body").animate({ scrollTop: 0 }, "slow");
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            // Manejar el clic en el enlace de Pricing
+            $('a[href="#"]').on('click', function(e) {
+                e.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
+
+                // Encontrar la sección con la clase "pricing-wrapper" y desplazarse hasta ella
+                $('html, body').animate({
+                    scrollTop: $('.pricing-wrapper').offset().top
+                }, 1000); // El valor 1000 representa la duración de la animación en milisegundos
+            });
+        });
+    </script>
 </head>
 <body>
 
@@ -20,9 +65,9 @@
         <nav class="menu">
             <a href="#Home">Home</a>
             <a href="#Blog">Blog</a>
-            <a href="#Contactos">Contacts</a>
+            <a href="#Contact">Contacts</a>
             <a href="#About">About</a>
-            <a href="#Pricing">Pricing</a>
+            <a href="#">Pricing</a>
             <a href="#Terms">Terms</a>
             <a href="#Legal">Legal</a>
             <label for="check" class="esconder-menu">
@@ -30,17 +75,15 @@
             </label>
         </nav>
     </header>
-
     <!-- Sección de banner -->
     <section id="banner">
         <div class="contenido-banner">
             <h3><span>THE</span> <br>VILLAGE</h3>
-            <a href="#" class="boton-empezar">Begin</a>
         </div>
     </section>
 
     <!-- Sección de linea del tiempo juego -->
-    <div class="">
+    <id class="historia">
         <ul class="timeline-site">
           <li class="event wow" data-date="COMIC">
             <h3>Once upon a time</h3>
@@ -76,13 +119,31 @@
         </ul>
       </div>
 
+<!-- Otras secciones de la página -->
+    <!-- Botón "Volver arriba" -->
+    <button id="scrollToTopBtn">Go back up</button>
     <!-- Sección de personajes -->
     <section id="personajes">
+        <style>
+            #scrollToTopBtn {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                display: none;
+                background-color: #007BFF;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                padding: 10px 15px;
+                cursor: pointer;
+            }
+        </style>
+
         <div>
             <img src="./images/JanyLogo.png" alt="">
             <h4>Jany</h4>
             <p>Magic Connection</p>
-            <a href="#" class="boton-saber-mas" onclick="mostrarInformacion('jany')">Saber más</a>
+            <a href="" class="boton-saber-mas" onclick="mostrarInformacion('jany')">Saber más</a>
             <div id="informacion-jany" style="display: none;">
                 <!-- Contenido adicional que se mostrará -->
                 <p>Additional information about Jany...</p>
@@ -92,7 +153,7 @@
             <img src="./images/LiderdealdeaLogo.png" alt="">
             <h4>Village leader</h4>
             <p>Ancestral Wisdom</p>
-            <a href="#" class="boton-saber-mas" onclick="mostrarInformacion('lider')">Saber más</a>
+            <a href="" class="boton-saber-mas" onclick="mostrarInformacion('lider')">Saber más</a>
             <div id="informacion-lider" style="display: none;">
                 <!-- Contenido adicional sobre el líder -->
                 <p>Additional information about the leader...</p>
@@ -102,7 +163,7 @@
             <img src="./images/MoustrodelbosqueLogo.png" alt="">
             <h4>Forest Monster</h4>
             <p>Cursed Legacy</p>
-            <a href="#" class="boton-saber-mas" onclick="mostrarInformacion('monstruo')">Saber más</a>
+            <a href="" class="boton-saber-mas" onclick="mostrarInformacion('monstruo')">Saber más</a>
             <div id="informacion-monstruo" style="display: none;">
                 <!-- Contenido adicional sobre el monstruo -->
                 <p>Additional information about the monster...</p>
@@ -144,17 +205,81 @@
             </div>
         </div>
         <div class="boton-iconos">
-            <a href="#" class="boton-saber-mas">Know more</a>
+            <a href="#" class="boton-saber-mas">Subscription</a>
         </div>
     </section>
+    <!-- precio y suscripcion -->
+<!-- Contenedor -->
+	<div class="pricing-wrapper clearfix">
+		<!-- Titulo -->
+		<h1 class="pricing-table-title">Subscriptions and Exclusive Benefits</h1>
+
+		<div class="pricing-table">
+			<h3 class="pricing-title">Monthly Explorer</h3>
+			<div class="price">$49 MXN<sup>/ Month</sup></div>
+			<!-- Lista de Caracteristicas / Propiedades -->
+			<ul class="table-list">
+				<li>Access <span>to exclusive side missions.</span></li>
+				<li>Additional in-game <span>currency for completing daily tasks.</span></li>
+				<li>Discounts  <span>on the purchase of cosmetic items.</span></li>
+				<li>24/7 <span class="unlimited">Support </span></li>
+				<li>Hero  <span class="unlimited">Customization</span></li>
+			</ul>
+			<!-- Contratar / Comprar -->
+			<div class="table-buy">
+				<p>$49 MXN<sup>/ Month</sup></p>
+				<a href="#" class="pricing-action">Buy</a>
+			</div>
+		</div>
+		
+		<div class="pricing-table recommended">
+			<h3 class="pricing-title">Epic Hero</h3>
+			<div class="price">$120 MXN<sup>/ Month</sup></div>
+			<!-- Lista de Caracteristicas / Propiedades -->
+			<ul class="table-list">
+				<li>All  <span>the benefits of the Annual Warrior.</span></li>
+				<li>Legendary  <span>weapon for Juany.</span></li>
+				<li>Free Battle Passes  <span>during subscription</span></li>
+                <li>Priority access  <span>to new updates.</span></li>
+				<li>Exclusive discounts and bonuses  <span class="unlimited">on in-game business transactions.</span></li>
+                <li>Access to customization options  <span class="unlimited">and unique visual effects for the weapons</span></li>
+			</ul>
+			<!-- Contratar / Comprar -->
+			<div class="table-buy">
+				<p>$120 MXM<sup>/ Month</sup></p>
+				<a href="#" class="pricing-action">Buy</a>
+			</div>
+		</div>
+
+		<div class="pricing-table">
+			<h3 class="pricing-title">Annual Warrior</h3>
+			<div class="price">$399 MXN<sup>/ annual</sup></div>
+			<!-- Lista de Caracteristicas / Propiedades -->
+			<ul class="table-list">
+				<li>All  <span>the benefits of the Monthly Explorer.</span></li>
+                <li>Unique skin   <span>for the character Juany.</span></li>
+				<li>Exclusive access  <span>to special events and challenges.</span></li>
+				<li>Double experience  <span>in battles to improve faster.</span></li>
+                <li>Unlocking exclusive  <span>skills for Juany.</span></li>
+				<li>Early access  <span class="unlimited">to new features and updates</span></li>
+				<li>Exclusive participation <span class="unlimited">in beta testing of the game</span></li>
+			</ul>
+			<!-- Contratar / Comprar -->
+			<div class="table-buy">
+				<p>$399 MXN<sup>/ annual (Save 15%)</sup></p>
+				<a href="#" class="pricing-action">Buy</a>
+			</div>
+		</div>
+	</div>
+<!-- partial -->
 
     <!-- Sección de contacto -->
-    <section id="contacto">
-        <h4>Contacto</h4>
+    <div id="contacto">
+        <h4>Contact us</h4>
         <form action="#">
             <div class="datos-form">
                 <div class="nombre">
-                    <label for="nombre">Nombre</label>
+                    <label for="nombre">Name</label>
                     <input type="text" name="nombre" id="nombre" placeholder="Nombre">
                 </div>
                 <div class="email">
@@ -163,7 +288,7 @@
                 </div>
             </div>
             <div class="mensaje">
-                <label for="mensaje">Mensaje</label>
+                <label for="mensaje">Message</label>
                 <textarea name="mensaje" id="mensaje" cols="30" rows="10" placeholder="Mensaje"></textarea>
             </div>
             <div class="boton-formulario">
@@ -171,14 +296,52 @@
             </div>
         </form>
     </section>
+<section>
+<!-- partial:index.partial.html -->
+<div class="scroller">
+    <h4>ENGINEERING TEAM</h4>
+    <ol>
+        <li style="--bg: url(https://spaceholder.cc/i/600x800?1)">
+            <h2>Raul</h2>
+            <p>Raul is our skilled Frontend Developer, expert in creating the user interface and
+                 user experience. Using his skills in HTML, CSS and JavaScript, Raul was 
+                 responsible for designing and developing the visual structure of the site, 
+                 ensuring that each element was aesthetically pleasing and easy to use.</p>
+        </li>
+        <li style="--bg: url(https://spaceholder.cc/i/600x800?2)">
+            <h2>Bryan</h2>
+            <p>Bryan, our talented Frontend Developer, contributed significantly to the visuals and 
+                interactivity of the website. With strong skills in HTML, CSS, and JavaScript, 
+                Bryan worked collaboratively with Raul to implement an attractive and functional user interface. 
+                His meticulous and creative approach was instrumental in achieving a seamless user experience.</p>
+        </li>
+        <li style="--bg: url(https://spaceholder.cc/i/600x800?3)">
+            <h2>Samantha</h2>
+            <p>Samantha, our Content and Communication expert, played a vital role
+                 in writing content, communicating effectively and ensuring the information
+                on the page was clear and compelling. Samantha worked on writing character descriptions,
+                 subscription details and contact messages.
+                 Her communication skills contributed to the cohesion and understanding of the content.</p>
+        </li>
+        <li style="--bg: url(https://spaceholder.cc/i/600x800?4)">
+            <h2>Alex</h2>
+            <p>Alex, our talented Graphic Designer, brought the website to life with his 
+                creativity and visual skills. He created the graphics, icons and overall
+                layout that make the page attractive and cohesive. 
+                The game's visual aesthetic and graphical 
+                elements that reflect the game's narrative are the result of Alex's hard work.</p>
+        </li>
+    </ol>
+</div>
+<!-- partial -->
+</section>
 
     <!-- Script para mostrar alerta al enviar el formulario -->
     <script>
         function mostrarAlerta() {
-            alert("Mensaje enviado exitosamente");
+            alert("Message send successfully");
         }
     </script>
-
     <!-- FOOTER -->
     <footer class="footer-section">
         <div class="container">

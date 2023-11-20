@@ -343,6 +343,212 @@ header {
   text-align: center;
   padding-bottom: 50px;
 }
+/* SECCION DE PRECIOS Y SUSCRIPCIONES */
+.pricing-table-title {
+	text-transform: uppercase;
+  background: #030303;
+	font-weight: 700;
+	font-size: 2.6em;
+	color: #FFF;
+	margin-top: 15px;
+	text-align: center;
+	margin-bottom: 25px;
+	text-shadow: 0 1px 1px rgba(0,0,0,0.4);
+  padding: 10px; /* Agrega un poco de espacio alrededor del texto */
+}
+
+.pricing-table-title a {
+	font-size: 0.6em;
+}
+
+.clearfix:after {
+	content: '';
+	display: block;
+	height: 0;
+	width: 0;
+	clear: both;
+}
+/** ========================
+ * Contenedor
+ ============================*/
+.pricing-wrapper {
+	width: 960px;
+	margin: 40px auto 0;
+}
+
+.pricing-table {
+	margin: 0 10px;
+	text-align: center;
+	width: 300px;
+	float: left;
+	-webkit-box-shadow: 0 0 15px rgba(0,0,0,0.4);
+	box-shadow: 0 0 15px rgba(0,0,0,0.4);
+	-webkit-transition: all 0.25s ease;
+	-o-transition: all 0.25s ease;
+	transition: all 0.25s ease;
+}
+
+.pricing-table:hover {
+	-webkit-transform: scale(1.06);
+	-ms-transform: scale(1.06);
+	-o-transform: scale(1.06);
+	transform: scale(1.06);
+}
+
+.pricing-title {
+	color: #FFF;
+	background: #e95846;
+	padding: 20px 0;
+	font-size: 2em;
+	text-transform: uppercase;
+	text-shadow: 0 1px 1px rgba(0,0,0,0.4);
+}
+
+.pricing-table.recommended .pricing-title {
+	background: #2db3cb;
+}
+
+.pricing-table.recommended .pricing-action {
+	background: #2db3cb;
+}
+
+.pricing-table .price {
+	background: #403e3d;
+	font-size: 3.4em;
+	font-weight: 700;
+	padding: 20px 0;
+	text-shadow: 0 1px 1px rgba(0,0,0,0.4);
+}
+
+.pricing-table .price sup {
+	font-size: 0.4em;
+	position: relative;
+	left: 5px;
+}
+
+.table-list {
+	background: #FFF;
+	color: #403d3a;
+}
+
+.table-list li {
+	font-size: 1.4em;
+	font-weight: 700;
+	padding: 12px 8px;
+}
+
+.table-list li:before {
+	content: "\f00c";
+	font-family: 'FontAwesome';
+	color: #3fab91;
+	display: inline-block;
+	position: relative;
+	right: 5px;
+	font-size: 16px;
+} 
+
+.table-list li span {
+	font-weight: 400;
+}
+
+.table-list li span.unlimited {
+	color: #FFF;
+	background: #e95846;
+	font-size: 0.9em;
+	padding: 5px 7px;
+	display: inline-block;
+	-webkit-border-radius: 38px;
+	-moz-border-radius: 38px;
+	border-radius: 38px;
+}
+
+
+.table-list li:nth-child(2n) {
+	background: #F0F0F0;
+}
+
+.table-buy {
+	background: #FFF;
+	padding: 15px;
+	text-align: left;
+	overflow: hidden;
+}
+
+.table-buy p {
+	float: left;
+	color: #37353a;
+	font-weight: 700;
+	font-size: 2.4em;
+}
+
+.table-buy p sup {
+	font-size: 0.5em;
+	position: relative;
+	left: 5px;
+}
+
+.table-buy .pricing-action {
+	float: right;
+	color: #FFF;
+	background: #e95846;
+	padding: 10px 16px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	font-weight: 700;
+	font-size: 1.4em;
+	text-shadow: 0 1px 1px rgba(0,0,0,0.4);
+	-webkit-transition: all 0.25s ease;
+	-o-transition: all 0.25s ease;
+	transition: all 0.25s ease;
+}
+
+.table-buy .pricing-action:hover {
+	background: #cf4f3e;
+}
+
+.recommended .table-buy .pricing-action:hover {
+	background: #228799;	
+}
+
+/** ================
+ * Responsive
+ ===================*/
+ @media only screen and (min-width: 768px) and (max-width: 959px) {
+ 	.pricing-wrapper {
+ 		width: 768px;
+ 	}
+
+ 	.pricing-table {
+ 		width: 236px;
+ 	}
+	
+	.table-list li {
+		font-size: 1.3em;
+	}
+
+ }
+
+ @media only screen and (max-width: 767px) {
+ 	.pricing-wrapper {
+ 		width: 420px;
+ 	}
+
+ 	.pricing-table {
+ 		display: block;
+ 		float: none;
+ 		margin: 0 0 20px 0;
+ 		width: 100%;
+ 	}
+ }
+
+@media only screen and (max-width: 479px) {
+	.pricing-wrapper {
+		width: 300px;
+	}
+}
+
+/* FIN DE SECCION DE PRECIOS Y SUSCRIPCIONES */
 
 /* FORMULARIO */
 #contacto {
@@ -642,6 +848,109 @@ color: #ff5e14;
 .footer-menu li a {
 font-size: 14px;
 color: #878787;
+}
+
+/*CONTENIDO SOBRE DESARROLLADORES*/
+.scroller {
+  overflow: auto;
+  padding: 1rem;
+  scroll-timeline-name: --scroller;
+  scroll-timeline-axis: inline;
+}
+
+.scroller ol,
+.scroller ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding-left: 0;
+  counter-reset: list-item;
+  perspective: 9000px;
+  transform-style: preserve-3d;
+  perspective-origin: 50% 50%;
+}
+.scroller ol > li,
+.scroller ul > li {
+  flex: 1 1 240px;
+  min-width: 240px;
+  border: 1px solid currentColor;
+  padding: 1rem;
+  animation: auto ease-in-out intro forwards, auto ease-in-out outro forwards;
+  animation-timeline: view(inline);
+  animation-range: entry, exit;
+  transform-origin: bottom center;
+}
+.scroller ol p,
+.scroller ol h2,
+.scroller ul p,
+.scroller ul h2 {
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+.scroller ol h2,
+.scroller ul h2 {
+  color: #aaa;
+  font-weight: normal;
+}
+
+.scroller ol > li {
+  display: flex;
+  flex-direction: column;
+  color: #ccc;
+  position: relative;
+  overflow: hidden;
+}
+.scroller ol > li::before {
+  counter-increment: list-item;
+  content: counter(list-item) ".";
+  font-size: 5em;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+.scroller ol > li::after {
+  content: "";
+  background-image: var(--bg);
+  position: absolute;
+  inset: -20px;
+  background-size: cover;
+  transform: scale(1);
+  transition: transform 0.5s ease-out, opacity 0.4s linear;
+  opacity: 0;
+  z-index: -1;
+}
+.scroller ol > li:hover {
+  color: #fff;
+}
+.scroller ol > li:hover::after {
+  transform: scale(1.1) rotate(4deg);
+  opacity: 0.8;
+}
+
+@keyframes intro {
+  from {
+    transform-origin: center left;
+    opacity: 0;
+    scale: 0;
+  }
+  to {
+    transform-origin: center left;
+    opacity: 1;
+    scale: 1;
+  }
+}
+@keyframes outro {
+  from {
+    transform-origin: center right;
+    opacity: 1;
+    scale: 1;
+  }
+  to {
+    transform-origin: center right;
+    opacity: 0;
+    scale: 0;
+  }
 }
 
 /* RESPONSIVE */
