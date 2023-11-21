@@ -245,9 +245,15 @@ p {
   margin-bottom: 0px;
   position: relative;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 25px;
+  font-size: 2vw; /* Ajusta este valor según tus necesidades */
+  line-height: 1.5;
   animation: slideInDownSmall 1s forwards;
+}
+@media screen and (max-width: 600px) {
+  .timeline-site .event {
+    font-size: 16px;
+    line-height: 1.2;
+  }
 }
 .timeline-site .event:last-of-type {
   padding-bottom: 0;
