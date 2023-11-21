@@ -43,20 +43,19 @@
 <body>
 
     <!-- Header con barra de navegación -->
-    <header>
+    <header id="mainHeader">
         <a class="logo">Logo</a>
         <input type="checkbox" id="check">
         <label for="check" class="mostrar-menu">
             &#8801;
         </label>
         <nav class="menu">
-            <a href="#Home">Home</a>
+            <a href="#main-description">Home</a>
             <a href="#Blog">Blog</a>
-            <a href="#Contact">Contacts</a>
-            <a href="#About">About</a>
+            <a href="#contacto">Contacts</a>
+            <a href="#scroller">About</a>
             <a href="#">Pricing</a>
-            <a href="#Terms">Terms</a>
-            <a href="#Legal">Legal</a>
+            <a href="#termsSection" onclick="openModal()">Terms</a>
             <label for="check" class="esconder-menu">
                 &#215;
             </label>
@@ -67,6 +66,18 @@
         <div class="contenido-banner">
             <h3><span>THE</span> <br>VILLAGE</h3>
         </div>
+    </section>
+    <section>
+    <div id="main-description">
+        <h2>Welcome to the village</h2>
+        <p>The plot of this game revolves around a classic adventure scenario,
+             where a young warrior named Janie arrives in a troubled town. 
+             The villagers are threatened by a beast that destroys their crops at night.</p>
+        <p>In this video game, you take on the role of the player and have the option to 
+            accept or reject the mission. If you choose to accept it, Janie embarks on a 
+            quest to confront the monster. After the battle, Janie returns to the town, where 
+            she receives a gold chest as a reward for completing the mission.</p>
+      </div>
     </section>
 
     <!-- Sección de linea del tiempo juego -->
@@ -114,8 +125,8 @@
         <style>
             #scrollToTopBtn {
                 position: fixed;
-                bottom: 20px;
-                right: 20px;
+                bottom: 100px; /* Ajusta este valor según tus necesidades */
+                right: 100px;
                 display: none;
                 background-color: #007BFF;
                 color: #fff;
@@ -130,7 +141,7 @@
             <img src="./images/JanyLogo.png" alt="">
             <h4>Jany</h4>
             <p>Magic Connection</p>
-            <a href="" class="boton-saber-mas" onclick="mostrarInformacion('jany')">know more</a>
+            <!-- <a href="" class="boton-saber-mas" onclick="mostrarInformacion('jany')">know more</a> -->
             <div id="informacion-jany" style="display: none;">
                 <!-- Contenido adicional que se mostrará -->
                 <p>Additional information about Jany...</p>
@@ -140,7 +151,7 @@
             <img src="./images/LiderdealdeaLogo.png" alt="">
             <h4>Village leader</h4>
             <p>Ancestral Wisdom</p>
-            <a href="" class="boton-saber-mas" onclick="mostrarInformacion('lider')">know more</a>
+            <!-- <a href="" class="boton-saber-mas" onclick="mostrarInformacion('lider')">know more</a> -->
             <div id="informacion-lider" style="display: none;">
                 <!-- Contenido adicional sobre el líder -->
                 <p>Additional information about the leader...</p>
@@ -150,13 +161,16 @@
             <img src="./images/MoustrodelbosqueLogo.png" alt="">
             <h4>Forest Monster</h4>
             <p>Cursed Legacy</p>
-            <a href="" class="boton-saber-mas" onclick="mostrarInformacion('monstruo')">know more</a>
+            <!-- <a href="" class="boton-saber-mas" onclick="mostrarInformacion('monstruo')"></a>-->
             <div id="informacion-monstruo" style="display: none;">
                 <!-- Contenido adicional sobre el monstruo -->
                 <p>Additional information about the monster...</p>
+
             </div>
         </div>
+        
     </section>
+    
     <script>
         function mostrarInformacion(personaje) {
             var informacionDiv = document.getElementById('informacion-' + personaje);
@@ -200,6 +214,23 @@
 	<div class="pricing-wrapper clearfix">
 		<!-- Titulo -->
 		<h1 class="pricing-table-title">Subscriptions and Exclusive Benefits</h1>
+        <style>
+            @keyframes colorChange {
+                0% { color: #007BFF; }
+                25% { color: #FF6347; }
+                50% { color: #4CAF50; }
+                75% { color: #FFD700; }
+                100% { color: #007BFF; }
+            }
+        
+            .pricing-table-title {
+                animation: colorChange 5s infinite; /* Cambia de colores durante 5 segundos y se repite infinitamente */
+                background-color: #000000; /* Color de fondo del texto (opcional) */
+                padding: 10px; /* Espaciado alrededor del texto (opcional) */
+                border-radius: 5px; /* Bordes redondeados (opcional) */
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra del texto (opcional) */
+            }
+        </style>
 
 		<div class="pricing-table">
 			<h3 class="pricing-title">Monthly Explorer</h3>
@@ -258,7 +289,23 @@
 			</div>
 		</div>
 	</div>
-<!-- partial -->
+
+<!-- compra exitosa alerta -->
+<script>
+    // Espera a que el documento esté completamente cargado
+    document.addEventListener("DOMContentLoaded", function () {
+        // Obtén todos los botones con la clase "pricing-action"
+        var buyButtons = document.querySelectorAll('.pricing-action');
+
+        // Agrega un evento de clic a cada botón
+        buyButtons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                // Muestra un mensaje de compra exitosa (puedes personalizar este mensaje)
+                alert('Successful purchase. Thanks for your purchase!');
+            });
+        });
+    });
+</script>
 
     <!-- Sección de contacto -->
     <div id="contacto">
@@ -331,28 +378,18 @@
             <span class="close" onclick="closeModal()">&times;</span>
             <h2>Terms and Conditions of the Game "The Village"</h2>
             <p>
-                <strong>1. Acceptance of Terms</strong><br>
+                <strong>Acceptance of Terms</strong><br>
                 By accessing and using "The Village", you agree to comply with these terms and conditions. If you do not agree with any part of these terms, we recommend that you do not play.
-            </p>
-            <p>
-                <strong>2. Proper Use</strong><br>
-                "The Village" is a game designed for entertainment. Players are expected to respect the rules of the game, interact positively, and avoid any disruptive or abusive behavior.
             </p>
             <!-- Agrega párrafos similares para los demás puntos -->
             <p>
-                <strong>3.Enjoy "The Village" and have an exciting gaming experience.</strong><br>
+                <strong>Enjoy "The Village" and have an exciting gaming experience.</strong><br>
                 Remember to adapt this text according to the specific theme of your game and the legal requirements of your region.
             </p>
             <p>
-                <strong>4.User Content</strong><br>
-                By interacting with "The Village", you agree that any content you contribute (comments, images, etc.) 
-                may be visible to other players. Offensive, defamatory or illegal content is prohibited.
-            </p>
-            <p>
-                <strong>5.Privacy</strong><br>
+                <strong>Privacy</strong><br>
                 Our privacy policy describes how we collect, store and use user information. By playing "The Village", you agree to our privacy policy.
             </p>
-            <p>Enjoy "The Village" and have an exciting gaming experience.</p>
         </div>
     </div>
 </section>
@@ -424,13 +461,12 @@
                     <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
                         <div class="footer-menu">
                             <ul>
-                                <a href="#Home">Home</a>
+                                <a href="#main-description">Home</a>
                                     <a href="#Blog">Blog</a>
-                                    <a href="#Contactos">Contacts</a>
-                                    <a href="#About">About</a>
-                                    <a href="#Pricing">Pricing</a>
+                                    <a href="#contacto">Contacts</a>
+                                    <a href="#scroller">About</a>
+                                    <a href="#">Pricing</a>
                                     <a href="#termsSection" onclick="openModal()">Terms</a>
-                                    <a href="#Legal">Legal</a>
                             </ul>
                         </div>
                     </div>
